@@ -1,0 +1,44 @@
+.box {
+    margin: 5px 0 5px 15px;
+    flex-shrink: 0; /* Prevent shrinking of boxes */
+    border: 1px solid rgb(195, 188, 188);
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center;
+    height:20vh;
+    width:110px;
+    border-radius: 20px;
+  }
+  
+  .topic{
+    margin: 20px 0 0 0 ;
+  }
+  .find{
+    align-items: center;
+    background-color:#075e54
+    ;
+    color:#fff;
+    border-radius: 20px;
+    padding:10px 20px ;
+    margin:20px
+  }
+  .topic2{
+    font-size: 14px;
+    color:var(--color2);
+    margin:10px 0;
+  }
+  .box p {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .hello {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of boxes */
+  }
+  
+  .sidemenu4{
+    background-color:var(--background-color1);
+  }

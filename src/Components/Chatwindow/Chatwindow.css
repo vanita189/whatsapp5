@@ -1,0 +1,52 @@
+.Chatwindow {
+    margin: 9.89% auto; /* Center align horizontally */
+
+    width: 100%; /* Set a fixed width */
+    text-align: center; /* Center align text */
+    height:100%;
+    
+  }
+  
+  .chat_image {
+    width: 350px;
+    height: auto;
+    margin: 0 auto; /* Center align horizontally */
+  }
+
+  .chat_image img {
+    width: 100%;
+  }
+  
+  .chat_info {
+    margin-top: 20px; /* Adjust margin as needed */
+    width: 100%;
+  }
+  
+  .chat_info h1 {
+    font-weight: 200;
+    color: var(--color1);
+  }
+  
+  .call {
+    margin: 15px 0;
+    color: var(--color2);
+  }
+  
+  .button1 {
+    background-color: #037b6f;
+    color: #fff;
+    border-radius: 25px;
+    height: 6vh;
+    font-weight: 600;
+    padding: 0 10px;
+    margin: 10px auto 50px; /* Center align horizontally */
+  }
+  
+  .chat_para {
+    margin: 10px 0;
+    color: var(--color2);
+    font-size: 14px;
+  }
+  .Chatwindow::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }

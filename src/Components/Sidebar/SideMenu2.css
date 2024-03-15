@@ -1,0 +1,42 @@
+.sidemenu2{
+    background-color:var(--background-color1);
+    color:var(--color1)
+}
+.image2{
+    width:100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.image2 img{
+    width:100%;
+}
+.information{
+    width:100%;
+    font-size: 16px;
+    text-align: left;
+    padding: 2px 6px;
+}
+.information button{
+    margin:5px 100px
+}
+.community{
+    text-align: center;
+    justify-content: center;
+    font-size: 14px;
+    padding:5px 24px; 
+}
+.see{
+    display: flex;
+    color: #128c7e;
+    padding:5px 85px; 
+
+}
+
+.community_button{
+   background-color:#128c7e;
+color:#fff;
+padding: 13px 20px;
+border-radius: 20px;
+font-weight: 600;
+}

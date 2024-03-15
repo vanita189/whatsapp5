@@ -1,0 +1,110 @@
+.navbar{
+    padding:0.5px 15px;
+    justify-content: space-between;
+    display: flex;
+    position: sticky;
+    top:0;
+    z-index: 100;
+    background-color:var(--background-color3) ;
+
+}
+/* styles.css */
+
+.left_navbar{
+    padding:-10px;
+}
+.navbar_sidebar{
+    position: sticky;
+    top:0;
+    z-index: 100;
+}
+.sidebar{
+    position:static;
+    background-color: var(--background-color1);
+    
+}
+.account{
+    color: var(--color2);
+    font-size: 45px;
+}
+.input-box input{
+    color:var(--color1)
+}
+.right_navbar{
+    color:var(--color1);
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+.icon{
+    margin:0 14px;
+    color:var(--color1);
+}
+.navbar2{
+    background-color:var(--background-color1);
+    padding:6px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.input-box{
+    width:360px;
+    display: flex;
+    align-items: center;
+    background-color:var(--background-color3) ;
+    color: var(--color1);
+    padding:  5px 13px;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.input-box input{
+    width:90%;
+    
+    border:1px solid var(--background-color2) ;
+    background-color:var(--background-color3) ;
+    font-size: 13px;
+}
+.horizontal_line{
+    width:100% ;
+    background-color: rgb(245, 235, 235);
+    height:1px;
+}
+
+.filter_icon{
+    margin-top: 7px;
+    color: var(--color2);
+    font-size: 10px;
+}
+.wt{
+    width: 100%;
+}
+
+Add custom styling for scrollbar
+::-webkit-scrollbar {
+    width: 5px;
+    
+  }
+ 
+  
+  
+  @media only screen and (max-width: 600px) {
+    .input-box {
+      width: calc(100% - 26px); /* Adjust input box width relative to the padding */
+      max-width: 100%; /* Ensure the input box does not exceed the viewport width */
+    }
+  }
+  
+  /* Medium screens (601px to 900px) */
+  @media only screen and (min-width: 601px) and (max-width: 900px) {
+    .input-box {
+      width: calc(100% - 76px); /* Adjust input box width relative to the padding and icons */
+      max-width: 100%; /* Ensure the input box does not exceed the viewport width */
+    }
+  }
+  
+  /* Large screens (901px and above) */
+  @media only screen and (min-width: 901px) {
+    .input-box {
+      width: 360px; /* Reset input box width for larger screens */
+    }
+  }

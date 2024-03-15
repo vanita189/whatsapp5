@@ -1,0 +1,67 @@
+.status{
+    background-color:var(--background-color1);
+}
+.my_status{
+    padding:20px;
+    display: flex;
+}
+.class1{
+    font-size: 15px;
+    text-align: left;
+    color:var(--color1);
+}
+.class2{
+    font-size: 14px;
+    color:var(--color2);
+    text-align: left;
+}
+.my_stat{
+    margin-left: 20px;
+}
+.status2{
+    width: 100%;
+    padding:0 15px;
+}
+.status3{
+    display: flex;
+    width: 100%;
+
+}
+
+.horizontal_line2{
+    margin-bottom: 8px;
+    color:var(--color2);
+}
+.mapping{
+    text-align: left;
+    font-size: 14px;
+    width: 100%;
+    margin-left:10px;
+margin-bottom: 8px;
+}
+.recent {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* For Firefox */
+  }
+  
+  .recent::-webkit-scrollbar {
+    width: 5px; /* Adjust the width as needed */
+  }
+  
+  /* Style the scrollbar thumb */
+  .recent::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust the color as needed */
+    border-radius: 10px; /* Adjust the border radius as needed */
+  }
+  
+  /* Change the color of horizontal_line2 to grey */
+  /* .horizontal_line2 {
+    background-color: grey;
+  } */
+  .horizontal_line3{
+    background-color:var(--background-color10);
+    width:100%;
+    height:1px;
+    margin-bottom: 8px;
+
+  }

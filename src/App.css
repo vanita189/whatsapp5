@@ -1,0 +1,116 @@
+/* App.css */
+
+/* Define general styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  border: unset;
+  outline: unset;
+  
+}
+
+.App {
+  display: flex;
+  top: 0;
+  position: sticky;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  background-color: var(--background-color1);
+
+}
+
+.side_bar {
+  width: 30%;
+  background-color: var(--background-color1);
+  flex: 0 0 30%; /* Set flex-grow, flex-shrink, and flex-basis */
+}
+
+.chat_window {
+  width: 70%;
+  margin-left: 1px;
+  background-color: var(--background-color3);
+
+  /* flex: 1; Take remaining space */
+}
+
+
+/* Add other necessary styles */
+
+/* Light Theme */
+.light-theme {
+  --background-color1: #ffffff;
+  --background-color3: #f2f2f2;
+  --background-color4: #f0f0f0;
+  --background-color5: #333;
+  --background-color6:#d5f5bd;
+  --background-color7:bisque;
+  --background-color8:#0f7b6e;
+--background-color:#f2f2f2;
+--background-color10:rgb(244, 239, 239); 
+
+  --background-image:url('https://pbs.twimg.com/media/FycEaclXsBEXAB8?format=png&name=4096x4096');
+  --color1: #333;
+  --color2: grey;
+  --color3:grey;
+}
+
+.dark-theme {
+  --background-color1: #232324;
+  --background-color3: #626161;
+  --background-color4: #464545;
+  --background-color6: #0f7b6e;
+  --background-color7:#333;
+  --background-color8:#333;
+  --background-color9:#000000;
+  --background-color10:#463939; 
+
+  --color3:rgb(245, 197, 107);
+
+  --background-image:url('https://e1.pxfuel.com/desktop-wallpaper/461/478/desktop-wallpaper-whatsapp-dark-whatsapp-chat.jpg');
+
+  --color1:  #ffffff;
+  --color2: #fff;
+}
+
+
+@media (max-width: 890px) {
+  .side_bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Make it cover the entire viewport height */
+    background-color: var(--background-color1);
+  }
+
+  /* .chat_window {
+    display: none;
+  } */
+}
+/* Add your existing styles here */
+
+/* Media query for screens 700px or less */
+@media (max-width: 700px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .chat_window {
+    display: none; /* Hide the chat window */
+  }
+}
+
+/* Media query for screens larger than 700px */
+@media (min-width: 701px) {
+  .App {
+    flex-direction: row;
+  }
+
+  .chat_window {
+    display: block; /* Show the chat window */
+    flex: 1; /* Occupy remaining space */
+  }
+}

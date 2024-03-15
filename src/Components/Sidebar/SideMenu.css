@@ -1,0 +1,85 @@
+.profile_scroll {
+    overflow-y: auto;
+    max-height: calc(100vh - 18vh); 
+    position: relative;
+    background-color: var(--background-color9);
+}
+.menu_item{
+    width: 180px;
+    height: 40px;
+    font-size: 15px;
+    color:var(--color2)
+}
+
+
+
+
+.profile_navbar {
+    margin: 0;
+    display: flex;
+    background-color: var(--background-color8);
+    width: 100%;
+    height: 18vh;
+    text-align: left;
+    align-items: left;
+    color: #fff;
+    padding: 11vh 0px 0 20px;
+}
+
+.prof {
+    font-size: 18px;
+    font-weight: 510;
+    margin-left: 20px;
+}
+
+.profile_details {
+    padding: 50px 100px;
+}
+
+.account_info {
+    display: block;
+    background-color: var(--background-color1);
+    text-align: left;
+    padding: 15px 24px;
+}
+
+.personal_detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.your_name {
+    color: #128c7e;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.me {
+    font-size: 15px;
+    color:  var(--color1);
+}
+.profile_scroll .MuiSvgIcon-root {
+    z-index: 1;
+}
+.additonal_name {
+    color: var(--color2);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 17px 24px;
+    text-align: left;
+}
+.profile_scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .profile_scroll::-webkit-scrollbar-track {
+    background: var(--background-color3); 
+  }
+  
+  .profile_scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2) ; 
+  }
+  .recent {
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent; 
+  }

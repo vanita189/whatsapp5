@@ -1,0 +1,81 @@
+.side_menu6{
+    background-color:var(--background-color1);
+color: var(--color1);
+}
+.input-box2{
+    display: flex;
+    width:93%;
+    background-color:var(--background-color2);
+    margin:0 15px;
+    padding:7px;
+    border-radius: 8px;
+}
+.input-box2 input{
+    background-color:var(--background-color2);
+    width:100%;
+    margin:0 0px;
+    padding:5px;
+    font-size: 14px;
+    color:var(--color2);
+}
+.search2{
+    margin:0 10px;
+    color:var(--color2);
+
+}
+.avatar{
+ display: flex;
+ align-items: center;
+ padding:20px;
+ margin-bottom: -10px;
+}
+.name_v{
+    align-items: center;
+    font-size: medium;
+    margin:0 20px;
+    text-align: left;
+
+}
+.side6{
+    height:440px;
+    overflow-y: auto;
+}
+.class6{
+    display:flex;
+    padding:0px 20px;
+    align-items: center;
+    margin:15px 0;
+
+}
+
+/* .class6:hover{
+    background-color: red;
+} */
+.class6 p{
+    margin:0 20px;
+    font-size: 15px;
+    font-weight: 400;
+}
+.horizontal_line6 {
+    background-color:var(--background-color3);
+    width: 85%;
+    height: 1px;
+    margin-left: auto; /* Align to the right */
+}
+
+
+
+.side6::-webkit-scrollbar {
+    width: 7px;
+   
+  }
+  .side6::-webkit-scrollbar-thumb {
+    background-color:var(--background-color1); 
+    width: 6px; 
+    height: 2px;
+    
+  }
+  
+  .side6::-webkit-scrollbar-track {
+    background-color:var(--background-color1); 
+  }

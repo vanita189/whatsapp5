@@ -1,0 +1,31 @@
+.new{
+    background-color:var(--background-color1);
+    color:var(--color1)
+}
+.input_box6{
+    display: flex;
+    width:95%;
+    padding:5px 10px;
+    background-color:var(--background-color2);
+    border-radius: 10px;
+    margin:0 10px;
+    color:var(--color1)
+
+}
+
+.input_box6 input{
+    width:100%;
+    margin: 0 20px ;
+    background-color:var(--background-color2);
+    color:var(--color1)
+
+}
+.new21{
+    display: flex;
+    margin:20px 10px;
+    font-size: 15px;
+    align-items: center;
+}
+.new21 p{
+    margin-left: 10px;
+}
