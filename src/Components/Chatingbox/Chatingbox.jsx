@@ -19,8 +19,8 @@ import SideMenu3 from '../Sidebar/SideMenu3';
 import SideMenu4 from '../Sidebar/SideMenu4';
 import SideMenu5 from '../Sidebar/SideMenu5';
 import { useTheme } from '../../ThemeContext';
-
-const Chatingbox = ({ selectedChat }) => {
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+const Chatingbox = ({ selectedChat, setChatOpen,setScreenWidth,screenWidth }) => {
     const [message, setMessage] = useState("");
     const [showPicker, setShowPicker] = useState(false);
     const [messagesDict, setMessagesDict] = useState({});
@@ -32,6 +32,9 @@ const Chatingbox = ({ selectedChat }) => {
     const [isSideMenu4Open, setIsSideMenu4Open] = useState(false);
     const [isSideMenu5Open, setIsSideMenu5Open] = useState(false);
     const { theme } = useTheme();
+    useEffect(()=>{
+        console.log(selectedChat, 'chatdsnsldn');
+    },[selectedChat])
 
     const handleAvatarClick = () => {
         setIsSideMenuOpen(true);
@@ -62,11 +65,11 @@ const Chatingbox = ({ selectedChat }) => {
     };
 
     useEffect(() => {
-        if (selectedChat && selectedChat.id) {
-            if (!messagesDict[selectedChat.id]) {
+        if (selectedChat && selectedChat?.id) {
+            if (!messagesDict[selectedChat?.id]) {
                 setMessagesDict(prevState => ({
                     ...prevState,
-                    [selectedChat.id]: [],
+                    [selectedChat?.id]: [],
                 }));
             }
         }
@@ -92,14 +95,19 @@ const Chatingbox = ({ selectedChat }) => {
     }, []);
 
     const handleChange = (e) => {
+
         setMessage(e.target.value);
+        console.log(e.target.value,'e.target.value');
     };
 
     const handleEmojiClick = (event, emojiObject) => {
         const emoji = emojiObject ? emojiObject.emoji : ""; // Check if emojiObject is defined
         setMessage(prevMessage => prevMessage + emoji);
     };
-
+    const handleBackButtonClick = () => {
+        setScreenWidth(681);
+        setChatOpen(false);
+      };
     const toggleEmojiPicker = () => {
         setShowPicker(!showPicker);
     };
@@ -110,10 +118,10 @@ const Chatingbox = ({ selectedChat }) => {
                 text: message,
                 timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
             };
-            const updatedMessages = [...messagesDict[selectedChat.id], newMessage];
+            const updatedMessages = [...messagesDict[selectedChat?.id], newMessage];
             setMessagesDict(prevState => ({
                 ...prevState,
-                [selectedChat.id]: updatedMessages,
+                [selectedChat?.id]: updatedMessages,
             }));
             setMessage("");
         }
@@ -121,6 +129,8 @@ const Chatingbox = ({ selectedChat }) => {
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
+            console.log(message, 'messge', messagesDict, 'messagedicr');
+
             sendMessage();
         }
     };
@@ -130,6 +140,8 @@ const Chatingbox = ({ selectedChat }) => {
 
             <div className='top-chat-box'>
                 <div className='left_chat_navbar'>
+                {screenWidth <= 681 &&<div onClick={handleBackButtonClick} style={{margin:"0 4px 0 -10px"}}><ArrowBackIcon/></div>}
+
                     <Avatar sx={{ width: 45, height: 45 }} alt={selectedChat ? selectedChat.name : ""} src={selectedChat ? selectedChat.avatarSrc : ""} onClick={handleAvatarClick} />
                     <p className='name_chat'>{selectedChat ? selectedChat.name : ""}</p>
                 </div>
@@ -145,10 +157,10 @@ const Chatingbox = ({ selectedChat }) => {
 
             <div className='chat-scroll'>
                 <Chats
-                    messages={messagesDict[selectedChat.id] || []}
+                    messages={messagesDict[selectedChat?.id] || []}
                     setMessages={messages => setMessagesDict(prevState => ({
                         ...prevState,
-                        [selectedChat.id]: messages,
+                        [selectedChat?.id]: messages,
                     }))}
                 />
             </div>

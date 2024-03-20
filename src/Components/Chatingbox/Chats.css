@@ -11,10 +11,10 @@
 .subscript{
   font-size: 10px;
   font-size: 10px;
-  bottom: 1px; /* Align it to the bottom of the message container */
-  right: 5px;
+  right: 5px;bottom:10%;
 position: absolute;  
 }
+
 .upper_portion{
   align-items: center;
   text-align: center;
@@ -30,13 +30,13 @@ position: absolute;
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin:20px 70px;
+  margin:20px auto;
 }
 .date{
   background-color: var(--background-color1);
   border-radius: 5px;
 width:fit-content;
-margin: 0 45%;
+margin: 0 auto;
 font-size: 13px;
 padding: 5px;
 color: var(--color2);
@@ -102,4 +102,14 @@ position: relative;
   
   .chats-container::-webkit-scrollbar-track {
     background-color:transparent; /* Color of the scrollbar track */
+  }
+  @media(max-width:681px) {
+    .hello-message-left{
+      max-width: 350px;
+
+    }
+    .hello-message-right{
+      max-width: 350px;
+
+    }
   }

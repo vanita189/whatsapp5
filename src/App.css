@@ -1,6 +1,7 @@
-/* App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Define general styles */
 * {
   margin: 0;
   padding: 0;

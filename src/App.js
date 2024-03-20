@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Sidebar from './Components/Sidebar/Sidebar';
@@ -16,11 +18,30 @@ const Home = () => {
 
 function App() {
   const [selectedChat, setSelectedChat] = useState(null);
+  const [chatOpen, setChatOpen] = useState(false)
   const [theme, setTheme] = useState('light-theme');
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+
+  }, [screenWidth]);
 
   const handleChatSelection = (chat) => {
     setSelectedChat(chat);
-    console.log("Selected chat:", chat);
+    setChatOpen(true)
+    setScreenWidth(681);
+  };
+  const handleChatSelectionIntial = (chat) => {
+    setSelectedChat(chat);
   };
 
   const toggleTheme = () => {
@@ -33,13 +54,14 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className={`App ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+      {screenWidth > 681 ? <div className={`App ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
         <BrowserRouter>
-          <Sidebar onChatSelect={handleChatSelection} toggleTheme={toggleTheme} style={{ width: "100%" }} />
+          <Sidebar onChatSelect={handleChatSelectionIntial} toggleTheme={toggleTheme} style={{ width: "100%" }} />
           <Routes>
-        <Route path="/Product" element={<Product/>}>
-          <Route path=':productId' element={<Chatingbox/>}></Route>
-        </Route>   </Routes>     
+            <Route path="/Product" element={<Product />}>
+              <Route path=':productId' element={<Chatingbox />}></Route>
+            </Route>
+          </Routes>
         </BrowserRouter>
 
         <div className={`chat_window ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`} style={{ backgroundColor: "var(--background-color1)" }}>
@@ -49,8 +71,20 @@ function App() {
             <Chatwindow className={`chat_window2 ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`} />
           )}
         </div>
-        
       </div>
+        :
+        <div className={`App ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+         
+            {!chatOpen && <BrowserRouter>
+              <Sidebar
+                onChatSelect={screenWidth > 681 ? handleChatSelectionIntial : handleChatSelection}
+                toggleTheme={toggleTheme}  
+                style={{ width: "100%" }}
+              />
+            </BrowserRouter>}
+          {chatOpen && <Chatingbox className='' screenWidth={screenWidth}  setChatOpen={setChatOpen} setScreenWidth={setScreenWidth}   selectedChat={selectedChat} messages={selectedChat ? selectedChat.messages : []} setMessages={selectedChat ? selectedChat.setMessages : []} /> }
+        </div>
+      }
     </ThemeProvider>
   );
 }
