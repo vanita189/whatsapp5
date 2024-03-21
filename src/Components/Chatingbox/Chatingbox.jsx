@@ -32,9 +32,6 @@ const Chatingbox = ({ selectedChat, setChatOpen,setScreenWidth,screenWidth }) =>
     const [isSideMenu4Open, setIsSideMenu4Open] = useState(false);
     const [isSideMenu5Open, setIsSideMenu5Open] = useState(false);
     const { theme } = useTheme();
-    useEffect(()=>{
-        console.log(selectedChat, 'chatdsnsldn');
-    },[selectedChat])
 
     const handleAvatarClick = () => {
         setIsSideMenuOpen(true);
@@ -140,7 +137,7 @@ const Chatingbox = ({ selectedChat, setChatOpen,setScreenWidth,screenWidth }) =>
 
             <div className='top-chat-box'>
                 <div className='left_chat_navbar'>
-                {screenWidth <= 681 &&<div onClick={handleBackButtonClick} style={{margin:"0 4px 0 -10px"}}><ArrowBackIcon/></div>}
+                {screenWidth <= 681 && <div onClick={handleBackButtonClick} style={{margin:"0 4px 0 -10px"}}><ArrowBackIcon/></div>}
 
                     <Avatar sx={{ width: 45, height: 45 }} alt={selectedChat ? selectedChat.name : ""} src={selectedChat ? selectedChat.avatarSrc : ""} onClick={handleAvatarClick} />
                     <p className='name_chat'>{selectedChat ? selectedChat.name : ""}</p>
